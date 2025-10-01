@@ -58,7 +58,7 @@ You need Python 3 installed, along with the following libraries. You can install
 2.  **Modify the script** to load the file directly, instead of using a hardcoded absolute path.
     * **Change this line:**
         ```python
-        file = r'C:\Users\Madusha.MahaGamage\Downloads\Fire Dataset\FireDataset_Modify3.xlsx'
+        file = r'C:\Users\Fire Dataset\FireDataset_Modify3.xlsx'
         ```
     * **To this:**
         ```python
