@@ -19,6 +19,12 @@ The script automates the entire workflow from data loading and preprocessing to 
 The script is designed to work with a single Excel file (`FireDataset_Modify3.xlsx`) which should contain the following features and a target variable. 
 
 * **Predictor Features:** `temperatureMean`, `ndviMean`, `slope`, `elevation`, `Dis_Water`, `Dis_Road`, `population`, `windspeed`, `evaporation`, `precipitation`.
+1.  **Raw Fire History Data**: The initial vector data for historical fire perimeters in California was downloaded from the **Fire and Resource Assessment Program (FRAP)**.
+    * **Source**: [FRAP GIS Data Page](https://frap.fire.ca.gov/mapping/gis-data/)
+
+2.  **Geospatial Feature Extraction**: The raw fire data, along with a corresponding set of non-fire locations, was processed using a custom Google Earth Engine (GEE) script. This script sampled various raster datasets to extract all the environmental, climatic, and topographic variables (e.g., NDVI, LST, precipitation, elevation). The GEE script and its methodology can be found in the following repository:
+    * **GEE Script Repository**: [GEE-extract_fire_variables](https://github.com/msmahagamage/GEE-extract_fire_variables.git)
+
 * **Target Variable:** `fire` (a categorical label indicating the class, e.g., 0 for 'No Fire' and 1 for 'Fire').
 
 ---
