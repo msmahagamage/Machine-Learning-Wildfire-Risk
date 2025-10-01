@@ -65,19 +65,3 @@ You need Python 3 installed, along with the following libraries. You can install
 4.  The script will print all the evaluation metrics and display the plots for each model.
 
 ---
-
-## 5. Important Correction: Data Scaling
-
-The provided script contains a common but critical error known as **data leakage**. The feature scaler is incorrectly fit on the test data. You should **only fit the scaler on the training data** and then use that same scaler to transform both the training and test sets.
-
-#### Original Incorrect Code:
-```python
-# SCALING THE TRAINING DATA (Correct)
-scaler = StandardScaler()
-scaler.fit(X_train)
-X_train = scaler.transform(X_train)
-
-# SCALING THE TESTING DATA (INCORRECT - leads to data leakage)
-scaler = StandardScaler()
-scaler.fit(X_test) # <-- This is the error. Never fit on the test set.
-X_test = scaler.transform(X_test)
